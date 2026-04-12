@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" style="scroll-behavior:smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מדיניות פרטיות — TBOOK</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue-700:#1d4ed8;--blue-600:#2563eb;--blue-500:#3b82f6;--blue-400:#60a5fa;
+  --blue-50:#eff6ff;--blue-100:#dbeafe;
+  --gray-900:#0f172a;--gray-700:#334155;--gray-600:#475569;--gray-400:#94a3b8;
+  --gray-100:#f1f5f9;--white:#fff;
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+html,body{min-height:100%;background:#f8faff}
+body{font-family:'Heebo',sans-serif;color:var(--gray-900);line-height:1.75;font-size:16px}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:100;padding:0 5%;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(59,130,246,0.1);
+  box-shadow:0 2px 16px rgba(0,0,0,0.05);
+}
+.nav-logo{font-family:'Rubik',sans-serif;font-size:18px;font-weight:800;color:var(--blue-700);letter-spacing:2px;text-decoration:none}
+.nav-back{font-size:14px;color:var(--blue-600);text-decoration:none;display:flex;align-items:center;gap:6px;font-weight:600;transition:color 0.2s}
+.nav-back:hover{color:var(--blue-700)}
+
+/* ── LAYOUT ── */
+.page-wrap{max-width:760px;margin:0 auto;padding:56px 24px 96px}
+@media(max-width:600px){.page-wrap{padding:40px 16px 80px}}
+
+/* ── HERO HEADER ── */
+.policy-header{
+  background:linear-gradient(135deg,var(--blue-700),var(--blue-500));
+  border-radius:24px;padding:48px 40px;margin-bottom:48px;color:#fff;
+  position:relative;overflow:hidden;
+}
+.policy-header::before{
+  content:'';position:absolute;top:-60px;left:-60px;
+  width:280px;height:280px;border-radius:50%;
+  background:rgba(255,255,255,0.07);
+}
+.policy-header .badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,0.18);border-radius:50px;
+  padding:5px 14px;font-size:12px;font-weight:600;letter-spacing:1px;
+  margin-bottom:20px;position:relative;
+}
+.policy-header h1{
+  font-family:'Rubik',sans-serif;font-size:clamp(26px,5vw,38px);
+  font-weight:800;line-height:1.25;margin-bottom:14px;position:relative;
+}
+.policy-header .meta{
+  font-size:13px;opacity:0.75;position:relative;display:flex;gap:20px;flex-wrap:wrap;
+}
+@media(max-width:600px){.policy-header{padding:32px 24px}}
+
+/* ── TOC ── */
+.toc{
+  background:#fff;border-radius:18px;padding:28px 32px;margin-bottom:40px;
+  border:1.5px solid rgba(59,130,246,0.12);
+  box-shadow:0 2px 16px rgba(59,130,246,0.07);
+}
+.toc-title{font-size:13px;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+.toc ol{padding-right:18px;display:flex;flex-direction:column;gap:8px}
+.toc ol li a{color:var(--blue-600);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+.toc ol li a:hover{color:var(--blue-700);text-decoration:underline}
+@media(max-width:600px){.toc{padding:22px 20px}}
+
+/* ── SECTIONS ── */
+.policy-section{
+  background:#fff;border-radius:20px;padding:36px 40px;margin-bottom:20px;
+  border:1.5px solid rgba(59,130,246,0.1);
+  box-shadow:0 2px 12px rgba(59,130,246,0.06);
+}
+@media(max-width:600px){.policy-section{padding:26px 20px}}
+
+.section-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:32px;height:32px;border-radius:9px;
+  background:linear-gradient(135deg,var(--blue-600),var(--blue-400));
+  color:#fff;font-family:'Rubik',sans-serif;font-size:13px;font-weight:700;
+  flex-shrink:0;
+}
+.section-heading{
+  display:flex;align-items:center;gap:12px;margin-bottom:20px;
+  padding-bottom:16px;border-bottom:1px solid rgba(59,130,246,0.08);
+}
+.section-heading h2{
+  font-family:'Rubik',sans-serif;font-size:clamp(17px,3vw,21px);
+  font-weight:700;color:var(--gray-900);
+}
+
+p{color:var(--gray-700);margin-bottom:12px}
+p:last-child{margin-bottom:0}
+
+/* ── LISTS ── */
+.policy-list{
+  list-style:none;display:flex;flex-direction:column;gap:10px;margin:14px 0;
+}
+.policy-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  background:var(--blue-50);border-radius:10px;
+  padding:11px 14px;font-size:15px;color:var(--gray-700);
+}
+.policy-list li::before{
+  content:'✓';color:var(--blue-600);font-weight:700;flex-shrink:0;margin-top:1px;
+}
+
+/* ── HIGHLIGHT BOXES ── */
+.info-box{
+  background:var(--blue-50);border-right:4px solid var(--blue-500);
+  border-radius:10px;padding:16px 18px;margin:16px 0;
+}
+.info-box p{color:var(--gray-700);font-size:14px;margin:0}
+.info-box strong{color:var(--blue-700)}
+
+.warn-box{
+  background:#fffbeb;border-right:4px solid #f59e0b;
+  border-radius:10px;padding:16px 18px;margin:16px 0;
+}
+.warn-box p{color:#78350f;font-size:14px;margin:0}
+
+/* ── CONTACT CARD ── */
+.contact-card{
+  background:linear-gradient(135deg,var(--blue-700),var(--blue-500));
+  border-radius:20px;padding:36px 40px;color:#fff;margin-top:8px;
+}
+.contact-card h3{font-family:'Rubik',sans-serif;font-size:20px;font-weight:700;margin-bottom:8px}
+.contact-card p{opacity:0.85;font-size:14px;margin-bottom:22px}
+.contact-items{display:flex;flex-direction:column;gap:12px}
+.contact-item{
+  display:flex;align-items:center;gap:12px;
+  background:rgba(255,255,255,0.15);border-radius:12px;
+  padding:12px 16px;text-decoration:none;color:#fff;
+  font-size:15px;font-weight:600;transition:background 0.2s;
+}
+.contact-item:hover{background:rgba(255,255,255,0.25)}
+.contact-item .ci-icon{font-size:20px;flex-shrink:0}
+@media(max-width:600px){.contact-card{padding:26px 20px}}
+
+/* ── LAST UPDATED ── */
+.last-updated{text-align:center;font-size:13px;color:var(--gray-400);margin-top:40px;padding-top:24px;border-top:1px solid rgba(59,130,246,0.08)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="tbook_he.html" class="nav-logo">TBOOK</a>
+  <a href="tbook_he.html" class="nav-back">→ חזרה לאתר</a>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- HEADER -->
+  <div class="policy-header">
+    <div class="badge">🔒 מדיניות פרטיות</div>
+    <h1>מדיניות הפרטיות של TBOOK</h1>
+    <div class="meta">
+      <span>📋 תועלת ספרים בע״מ</span>
+      <span>📅 עדכון אחרון: יוני 2025</span>
+      <span>🇮🇱 חל על שירותים בישראל בלבד</span>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">תוכן העניינים</div>
+    <ol>
+      <li><a href="#s1">מבוא</a></li>
+      <li><a href="#s2">איזה מידע נאסף</a></li>
+      <li><a href="#s3">מטרות השימוש במידע</a></li>
+      <li><a href="#s4">שימוש בבינה מלאכותית</a></li>
+      <li><a href="#s5">העברת מידע לצדדים שלישיים</a></li>
+      <li><a href="#s6">שמירת מידע ואבטחת מידע</a></li>
+      <li><a href="#s7">זכויות המשתמש</a></li>
+      <li><a href="#s8">שימוש על ידי קטינים</a></li>
+      <li><a href="#s9">יצירת קשר</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. מבוא -->
+  <div class="policy-section" id="s1">
+    <div class="section-heading">
+      <div class="section-num">1</div>
+      <h2>מבוא</h2>
+    </div>
+    <p>ברוכים הבאים ל־TBOOK, פלטפורמת השאלת ספרי הלימוד הדיגיטליים של חברת <strong>תועלת ספרים בע״מ</strong>. אנו מחויבים לשמירה על פרטיותכם ועל המידע האישי שאתם מוסרים לנו.</p>
+    <p>מדיניות פרטיות זו מסבירה אילו נתונים אנו אוספים, כיצד אנו משתמשים בהם, ומהן זכויותיכם בנוגע למידע זה — בהתאם לחוק הגנת הפרטיות הישראלי תשמ״א-1981 ותקנותיו.</p>
+    <div class="info-box">
+      <p><strong>שימוש בשירות מהווה הסכמה</strong> לתנאי מדיניות פרטיות זו. אם אינכם מסכימים לתנאים כלשהם, אנא הפסיקו את השימוש בשירות.</p>
+    </div>
+  </div>
+
+  <!-- 2. מידע נאסף -->
+  <div class="policy-section" id="s2">
+    <div class="section-heading">
+      <div class="section-num">2</div>
+      <h2>איזה מידע נאסף</h2>
+    </div>
+    <p>אנו אוספים אך ורק את המידע שאתם מוסרים לנו באופן מפורש, דרך טפסי יצירת קשר וההרשמה לשירות. המידע כולל:</p>
+    <ul class="policy-list">
+      <li><strong>שם מלא</strong> — לצורך זיהוי ופנייה אישית</li>
+      <li><strong>מספר טלפון</strong> — לצורך יצירת קשר</li>
+      <li><strong>כתובת מייל</strong> — לתקשורת ועדכונים</li>
+      <li><strong>שם בית הספר</strong> — לשיוך מוסדי וניהול רישיונות</li>
+    </ul>
+    <div class="info-box">
+      <p><strong>לא נאספים נתונים אוטומטיים:</strong> אנו לא עושים שימוש בעוגיות (Cookies), לא מריצים מעקב אנליטי, ולא אוספים מידע על דפדפן, מכשיר, או התנהגות גלישה.</p>
+    </div>
+  </div>
+
+  <!-- 3. מטרות -->
+  <div class="policy-section" id="s3">
+    <div class="section-heading">
+      <div class="section-num">3</div>
+      <h2>מטרות השימוש במידע</h2>
+    </div>
+    <p>המידע שנאסף ישמש אך ורק למטרות הבאות:</p>
+    <ul class="policy-list">
+      <li><strong>יצירת קשר</strong> — מענה לפניות, תיאום הדגמות ותמיכה שוטפת</li>
+      <li><strong>שיפור המוצר</strong> — הבנת צרכי המשתמשים ושיפור חוויית השימוש ב־TBOOK</li>
+      <li><strong>שיווק</strong> — שליחת עדכונים ומידע על שירותים חדשים, בכפוף להסכמתכם</li>
+    </ul>
+    <p>לא נעשה כל שימוש במידע שלכם מעבר למטרות המפורטות לעיל, ולא נמכור את המידע לצדדים שלישיים לצרכים מסחריים.</p>
+  </div>
+
+  <!-- 4. AI -->
+  <div class="policy-section" id="s4">
+    <div class="section-heading">
+      <div class="section-num">4</div>
+      <h2>שימוש בבינה מלאכותית</h2>
+    </div>
+    <p>מערכת TBOOK עושה שימוש בטכנולוגיות של בינה מלאכותית (AI) כחלק מליבת השירות. להלן הפירוט:</p>
+    <ul class="policy-list">
+      <li>הבינה המלאכותית <strong>סורקת ומנתחת את תשובות התלמידים</strong> בתוך הפלטפורמה</li>
+      <li>המערכת <strong>מקבלת פידבק מהמורה</strong> לגבי דגשים ומה חשוב לבדוק — ומשלבת אותו בניתוח</li>
+      <li>הניתוח מיועד לסייע בזיהוי מגמות, ייעול תהליכי למידה ומתן תובנות פדגוגיות</li>
+    </ul>
+    <div class="warn-box">
+      <p>⚠️ <strong>שימו לב:</strong> תשובות התלמידים ופעולות במערכת עשויות להיות מעובדות על ידי מנועי AI. הנתונים מועברים בצורה מאובטחת ואינם מיוחסים לתלמיד ספציפי ללא אישור המוסד החינוכי.</p>
+    </div>
+  </div>
+
+  <!-- 5. צדדים שלישיים -->
+  <div class="policy-section" id="s5">
+    <div class="section-heading">
+      <div class="section-num">5</div>
+      <h2>העברת מידע לצדדים שלישיים</h2>
+    </div>
+    <p>תועלת ספרים בע״מ עשויה להעביר חלק מהמידע לספקי שירותים חיצוניים, אך זאת בלבד למטרות המפורטות במדיניות זו:</p>
+    <ul class="policy-list">
+      <li><strong>ספקי עיבוד AI</strong> — לצורך ניתוח תשובות תלמידים ושיפור הפלטפורמה</li>
+      <li><strong>ספקי תשתית ואחסון</strong> — לצורך אחסון מאובטח של הנתונים</li>
+    </ul>
+    <p>כל ספק צד שלישי מחויב לשמור על סודיות המידע ואינו רשאי לעשות בו שימוש מעבר לנדרש למתן השירות.</p>
+    <div class="info-box">
+      <p>אנו <strong>לא מוכרים</strong> ו<strong>לא משכירים</strong> מידע אישי של משתמשים לגורמים מסחריים כלשהם.</p>
+    </div>
+  </div>
+
+  <!-- 6. שמירה ואבטחה -->
+  <div class="policy-section" id="s6">
+    <div class="section-heading">
+      <div class="section-num">6</div>
+      <h2>שמירת מידע ואבטחת מידע</h2>
+    </div>
+    <p>אנו נוקטים באמצעי אבטחה סבירים ומקובלים לשמירה על המידע שלכם:</p>
+    <ul class="policy-list">
+      <li>העברת מידע מוצפנת באמצעות פרוטוקול HTTPS</li>
+      <li>אחסון מידע בשרתים מאובטחים עם גישה מוגבלת לעובדים מורשים בלבד</li>
+      <li>סקירות אבטחה תקופתיות</li>
+    </ul>
+    <p>המידע יישמר כל עוד נדרש לצורך מתן השירות, ולא יותר מהנדרש על פי דין. עם סיום הקשר העסקי, ימחק המידע בתוך פרק זמן סביר, אלא אם קיימת חובה חוקית לשמרו.</p>
+  </div>
+
+  <!-- 7. זכויות -->
+  <div class="policy-section" id="s7">
+    <div class="section-heading">
+      <div class="section-num">7</div>
+      <h2>זכויות המשתמש</h2>
+    </div>
+    <p>בהתאם לחוק הגנת הפרטיות הישראלי, עומדות לכם הזכויות הבאות:</p>
+    <ul class="policy-list">
+      <li><strong>זכות עיון</strong> — לבקש לראות את המידע האישי שנאסף עליכם</li>
+      <li><strong>זכות תיקון</strong> — לבקש תיקון מידע שגוי או לא מדויק</li>
+      <li><strong>זכות מחיקה</strong> — לבקש מחיקת המידע שלכם ממאגרינו</li>
+      <li><strong>זכות התנגדות לשיווק</strong> — להסיר עצמכם מרשימות תפוצה שיווקיות בכל עת</li>
+    </ul>
+    <p>לממוש זכויותיכם, אנא פנו אלינו בכתב דרך פרטי הקשר המפורטים בסעיף 9. נטפל בבקשתכם בהקדם האפשרי ולא יאוחר מ־30 יום.</p>
+  </div>
+
+  <!-- 8. קטינים -->
+  <div class="policy-section" id="s8">
+    <div class="section-heading">
+      <div class="section-num">8</div>
+      <h2>שימוש על ידי קטינים</h2>
+    </div>
+    <p>מערכת TBOOK מיועדת לשימוש במסגרת חינוכית ומשרתת גם תלמידים מתחת לגיל 18.</p>
+    <ul class="policy-list">
+      <li>הגישה לפלטפורמה על ידי קטינים נעשית <strong>באמצעות מוסד חינוכי מורשה</strong> (בית ספר)</li>
+      <li>בית הספר הוא <strong>הגורם האחראי</strong> לקבלת הסכמת הורים/אפוטרופסים במידת הצורך</li>
+      <li>אנו לא אוספים מידע אישי ישירות מקטינים ללא ידיעת המוסד החינוכי</li>
+    </ul>
+    <div class="info-box">
+      <p>הורה או אפוטרופוס הרואה עצמו מעוניין לבדוק את המידע שנאסף לגבי ילדו, מוזמן לפנות אלינו ישירות.</p>
+    </div>
+  </div>
+
+  <!-- 9. יצירת קשר -->
+  <div class="policy-section" id="s9">
+    <div class="section-heading">
+      <div class="section-num">9</div>
+      <h2>יצירת קשר</h2>
+    </div>
+    <p>לשאלות, בקשות לממוש זכויות, או כל פנייה אחרת הקשורה לפרטיות — אתם מוזמנים לפנות אלינו:</p>
+
+    <div class="contact-card">
+      <h3>תועלת ספרים בע״מ — TBOOK</h3>
+      <p>נשמח לענות על כל שאלה בנוגע למדיניות הפרטיות שלנו.</p>
+      <div class="contact-items">
+        <a href="tel:0525603424" class="contact-item">
+          <span class="ci-icon">📞</span>
+          <div>
+            <div style="font-size:12px;opacity:0.75;font-weight:400;margin-bottom:2px">טלפון</div>
+            <div>052-560-3424</div>
+          </div>
+        </a>
+        <a href="mailto:1@tbook.co.il" class="contact-item">
+          <span class="ci-icon">✉️</span>
+          <div>
+            <div style="font-size:12px;opacity:0.75;font-weight:400;margin-bottom:2px">מייל</div>
+            <div>1@tbook.co.il</div>
+          </div>
+        </a>
+        <div class="contact-item" style="cursor:default">
+          <span class="ci-icon">📍</span>
+          <div>
+            <div style="font-size:12px;opacity:0.75;font-weight:400;margin-bottom:2px">כתובת</div>
+            <div>אבן יהודה, ישראל</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="last-updated">
+    מדיניות פרטיות זו עודכנה לאחרונה ביוני 2025 ·
+    תועלת ספרים בע״מ · כל הזכויות שמורות
+  </div>
+
+</div>
+</body>
+</html>
